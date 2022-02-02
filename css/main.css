@@ -49,7 +49,8 @@ header {
 	justify-content:center;
 	align-items:center;
 	border-bottom: 3px solid #77a466;
-	margin: 0 auto;
+	margin: 0;
+	width: 100%;
 	flex-flow:column wrap;
 }
 
@@ -85,13 +86,13 @@ header nav ul {
 	padding-inline-start: 0px;
 }
 header nav ul li {
-			display:flex;
+	display:flex;
 	justify-content:center;
 	align-items:center;
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 0.85em;
-	padding: 1em;
+	padding-top: 1em;
 	width: 100%;
 }
 header nav ul li a{
@@ -205,4 +206,73 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.85em;
+}
+
+
+/*
+Now, you’ll go to the tablet media query, and add some Flexbox properties to the following elements:
+bottom-section
+section-one
+section-two
+section-three
+Some of the properties that you might use include justify-content, align-items, and flex-basis.
+Next, you’ll add in borders on the sides of the section-two div. And make sure that there’s a single border across the top of the entire bottom-section.
+Remember that you shouldn’t have any duplicate code from the mobile styles in your media query.
+*/
+@media all and (min-width:768px) {
+    /* Tablet styles here */
+	
+	.bottom-section{
+		align-items: stretch;
+		flex-flow: row wrap;
+	}
+	.section-one,
+	.section-two,
+	.section-three {
+		flex-basis:33%;
+		border-left: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+	}
+	.section-three{
+		border-right: 1px solid #eee;
+	}
+	header nav{
+		font-size:1.3em;
+	}
+	
+ 
+}
+ 
+@media all and (min-width:1200px) {
+    /* Desktop styles here */
+	header{
+		flex-flow:row wrap;
+		margin: 0;
+		justify-content:space-between;
+		width:100%;
+	}
+	header h1 {
+		width: 60% ;
+		padding: opx 30px;
+		border-bottom: ;
+		text-align: left;
+	}
+	header nav{
+		width: 40%;
+		border: none;
+	}
+	header nav ul{
+		flex-flow:row nowrap;
+		justify-content:space-between;
+	}
+	header nav ul li{
+		font-size: 0.65em;
+		padding: 0.3em;
+		width:auto;
+		flex-flow:row nowrap;		
+	}
+	footer{
+		border: none;
+	}
+ 
 }
